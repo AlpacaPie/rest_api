@@ -44,13 +44,13 @@ def user(user_id):
             return {'status': 'error', 'reason': 'no such id'}, 500
 
 
-@app.route('/users/get_user_name/<user_id>')
-def get_user_name(user_id):
+@app.route('/users/get_user_data/<user_id>')
+def get_user_data(user_id):
     user_name = get_user_name_from_db(user_id)
     if user_name:
-        return "<H1 id='user'>" + user_name + "</H1>"
+        return "<H1 id='user'>" + user_name + "</H1>", 200
     else:
-        return "<H1 id='error'>" + 'no such user:' + user_name + "</H1>"
+        return "<H1 id='error'>" + 'no such user:' + user_name + "</H1>", 500
 
 
 app.run(host='127.0.0.1', debug=True, port=5000)

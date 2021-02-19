@@ -19,7 +19,7 @@ def get_user_name_from_db(user_id: int):
     cursor = get_cursor()
     cursor.execute(f'SELECT user_name FROM users WHERE user_id={user_id}')
     for row in cursor:
-        return str(row)
+        return row[0]
 
 
 
