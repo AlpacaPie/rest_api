@@ -50,7 +50,7 @@ def get_user_data(user_id):
     if user_name:
         return "<H1 id='user'>" + user_name + "</H1>", 200
     else:
-        return "<H1 id='error'>" + 'no such user:' + user_name + "</H1>", 500
+        return "<H1 id='error'>" + 'no such user:' + user_id + "</H1>", 500
 
 
 app.run(host='127.0.0.1', debug=True, port=5000)
